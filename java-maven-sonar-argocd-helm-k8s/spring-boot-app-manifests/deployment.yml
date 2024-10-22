@@ -5,7 +5,7 @@ metadata:
   labels:
     app: spring-boot-app
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: spring-boot-app
@@ -15,7 +15,7 @@ spec:
         app: spring-boot-app
     spec:
       containers:
-      - name: spring-boot-app
-        image: ashaik65/argocd-app:33
-        ports:
-        - containerPort: 8080
+        - name: spring-boot-app
+          image: nehalkhan729/argocd-app:replaceImageTag
+          ports:
+            - containerPort: 8080
